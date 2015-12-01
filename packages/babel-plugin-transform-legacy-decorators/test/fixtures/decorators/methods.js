@@ -1,0 +1,4 @@
+class ExampleClass {
+  @example
+  method() {}
+}

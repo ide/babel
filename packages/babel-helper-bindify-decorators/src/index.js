@@ -1,9 +1,8 @@
 import type { NodePath } from "babel-traverse"
 import * as t from "babel-types";
 
-export default function bindifyDecorators(decorators: Array<NodePath>): Array<NodePath> {
-  for (let decoratorPath of decorators) {
-    let decorator = decoratorPath.node;
+export default function bindifyDecorators(decorators: Array<Node>): void {
+  for (let decorator of decorators) {
     let expression = decorator.expression;
     if (!t.isMemberExpression(expression)) continue;
 
